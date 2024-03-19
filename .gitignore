@@ -1,3 +1,5 @@
-node_modules/
-
+node_modules
 .env
+cc.txt
+package-lock.json
+seeds
