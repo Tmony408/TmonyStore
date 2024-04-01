@@ -15,7 +15,7 @@ const createUser = asyncHandler(async (req, res) => {
     const findUser = await User.findOne({ email: email })
     if (!findUser) {
         const newUser = await User.create(req.body)
-        res.json(newUser)
+        res.json(newUser) 
     } else {
         throw new Error('user already exist')
 
@@ -217,7 +217,7 @@ const resetPassword = asyncHandler(async(req,res)=>{
     const {password} = req.body;
     const {token} = req.params;
     const hashedToken = crypto.createHash("sha256").update(token).digest("hex");
-    const user = await User.findOne({
+    let user = await User.findOne({
         passwordResetToken: hashedToken,
         passwordResetExpires: {$gt: Date.now()},
 

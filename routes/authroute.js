@@ -5,7 +5,7 @@ const { authMiddleware, isAdmin } = require('../middlewares/authMiddleware');
 
 Router.post('/register', createUser)
 Router.post('/login',loginControl )
-Router.post('/forgot-password-token' , forgotPasswordToken)
+Router.post('/forgot-password-token' , forgotPasswordToken) 
 Router.get('/logout', logOut)
 Router.get('/get-users',authMiddleware, getAllUsers)
 Router.get('/refresh', handleRefreshToken)
