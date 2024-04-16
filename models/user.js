@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt')
 const Schema = mongoose.Schema;
 const crypto = require('crypto');
+const { type } = require('os');
 
 // Declare the Schema of the Mongo model
 const userSchema = new mongoose.Schema({
@@ -39,7 +40,10 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
-    address: [{ type: Schema.Types.ObjectId, ref: "Address" }],
+    address: {
+        type: String,
+         
+    },
     wishlist: [{ type: Schema.Types.ObjectId, ref: "Product" }],
     refreshToken: {
         type: String,
