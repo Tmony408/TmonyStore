@@ -5,6 +5,7 @@ const notFound = (req,res,next) =>{
     next(error)
 }
 
+
 // Error Handler 
 const errorHandler = (err, req,res,next) =>{
     const statusCode = res.statusCode == 200 ? 500 : res.statusCode

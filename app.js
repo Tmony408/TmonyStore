@@ -9,6 +9,7 @@ const blogRoutes = require('./routes/blogRoute')
 const categoryRoutes = require('./routes/categoryRoute')
 const blogCategoryRoutes = require('./routes/blogCategoryRoute')
 const brandRoutes = require('./routes/brandRoute')
+const couponRoutes = require('./routes/couponRoutes')
 const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
 const { notFound, errorHandler } = require('./middlewares/errorUtils');
@@ -39,6 +40,8 @@ app.use('/api/blog', blogRoutes )
 app.use('/api/category', categoryRoutes )
 app.use('/api/blog-category', blogCategoryRoutes )
 app.use('/api/brand', brandRoutes )
+app.use('/api/coupon', couponRoutes)
+
 
 
 // Error errorHandler

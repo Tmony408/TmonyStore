@@ -22,15 +22,11 @@ var productSchema = new mongoose.Schema({
         required: true,
     },
     category: {
-        // type:mongoose.Schema.Types.ObjectId,
-        // ref : "Category"
-        type: String,
-        required: true
+        type:mongoose.Schema.Types.ObjectId,
+        ref : "Category"
     },
     brand: {
-        type: String,
-        // enum: ["Apple", "Samsung", "Lenovo"]
-        required: true
+        type: mongoose.Schema.Types.ObjectId, ref: "Brand" 
     },
     quantity: {
         type: Number,
@@ -41,9 +37,7 @@ var productSchema = new mongoose.Schema({
         default: 0,
         select: false
     },
-    images: {
-        type: Array
-    },
+    images: [],
     color: {
         type: String,
         // enum: ["Black", "White", "Red"]
@@ -51,6 +45,7 @@ var productSchema = new mongoose.Schema({
     },
     ratings: [{
         star: Number,
+        comment: String,
         postedBy: { type: mongoose.Schema.Types.ObjectId, ref: "User" }
     }],
     totalRating: {
